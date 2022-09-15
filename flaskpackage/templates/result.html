@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div style="margin-left: 30%; margin-top: 10px; font-size: large;">
+    <a href="{{url_for('home')}}">
+        < Back</a>
+</div>
+<div style="margin-left: 30%; margin-top: 20px;width: 40%; text-align: center;">
+    <div>
+    </div>
+    <img src="{{url_for('static', filename='uploads/' + 'answer.jpg')}}" alt="Image File Output">
+    <span></span>
+    {% if text %}
+    <legend class='border-bottom mb-4' style="text-align: center;">Bounding Box - Class Name (Confidence)</legend>
+    <div style="align-content: center;">
+        {% for t in text %}
+        <p>
+            {{ t }}
+        </p>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+{% endblock content %}
